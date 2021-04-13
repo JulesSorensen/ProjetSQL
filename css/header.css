@@ -1,0 +1,44 @@
+body{
+    margin: 0;
+}
+
+.todo{
+    text-align: center;
+}
+
+.nav{
+    border: solid;
+    border-left: transparent;
+    border-radius: 15px;
+    position: fixed;
+    left: -20px;
+    top: 45%;
+    height: 30%;
+    width: 6em;
+    list-style-type: none;
+}
+
+.profil{
+    border: solid;
+    border-left: transparent;
+    border-radius: 15px;
+    position: fixed;
+    left: -20px;
+    top: 20%;
+    height: 15%;
+    width: 6em;
+    list-style-type: none;
+}
+
+.btn{
+    border: solid black;
+    border-left: transparent;
+    border-right: transparent;
+    margin: 15px 0 0 -20px;
+    height: 35px;
+    width: 116px;
+}
+
+.tit{
+    text-align: left;
+}
