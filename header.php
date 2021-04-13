@@ -17,12 +17,23 @@
                     <div class="collapse navbar-collapse"
                         id="navcol-1">
                         <ul class="nav navbar-nav">
-                            <li class="nav-item" role="presentation"><a class="nav-link" href="#">Link</a></li>
-                            <li class="nav-item" role="presentation"><a class="nav-link" href="#">Link</a></li>
+                            <li class="nav-item" role="presentation"><a class="nav-link" href="index.php?p=accueil">Accueil</a></li>
+                            <li class="nav-item" role="presentation"><a class="nav-link" href="index.php?p=reminds">Rappels</a></li>
                         </ul>
                         <form class="form-inline mr-auto" target="_self">
-                            <div class="form-group"><label for="search-field"><i class="fa fa-search"></i></label><input class="form-control search-field" type="search" name="search" id="search-field"></div>
-                        </form><span class="navbar-text"><a href="#" class="login">Log In</a></span><a class="btn btn-light action-button" role="button" href="#">Sign Up</a></div>
+                            <!-- <div class="form-group"><label for="search-field"><i class="fa fa-search"></i></label><input class="form-control search-field" type="search" name="search" id="search-field"></div> -->
+                        </form>
+                        <?php
+                            if (isset($_POST["online"])) {
+                                ?>
+                                    <span class="navbar-text"><a href="index.php?p=compte" class="login">Mon compte</a></span><a class="btn btn-light action-button" role="button" href="index.php?p=deconnexion">Se déconnecter</a></div>
+                                <?php
+                            } else {
+                                ?>
+                                    <span class="navbar-text"><a href="index.php?p=connexion" class="login">Log In</a></span><a class="btn btn-light action-button" role="button" href="index.php?p=inscription">Sign Up</a></div>
+                                <?php
+                            }
+                        ?>
                 </div>
             </nav>
         </div>
