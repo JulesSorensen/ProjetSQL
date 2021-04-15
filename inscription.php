@@ -13,6 +13,8 @@
         $err = "Ce compte existe déjà...";
       } else {
         $ORes = $Bdd->query("INSERT INTO users (email, nom, prenom, mdp) VALUES ('$_POST[email]','$_POST[nom]','$_POST[prenom]','$_POST[mdp]')");
+        $id = $Bdd->lastInsertId();
+        $ORes2 = $Bdd->query("INSERT INTO stats (usersid, remindnb) VALUES ('$id',0)");
         header("Refresh:0; url=index.php?p=connexion");
       }
     }

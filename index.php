@@ -21,6 +21,7 @@
             case 'connexion':       include('connexion.php');       break;
             case 'inscription':     include('inscription.php');     break;
             case 'deconnexion':     include('deconnexion.php');     break;
+            case 'classement':      include('classement.php');      break;
             case 'presentation':    include('presentation.php');    break;
             default:                include('presentation.php');    break;
         }

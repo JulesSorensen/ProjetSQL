@@ -79,6 +79,9 @@ if(isset($_POST["ajout"])) {
         $date = date('Y-m-d H:i:s', time() + $sec);
     }
     $Bdd->query("INSERT INTO reminds (usersid, description, date) VALUES ('$_SESSION[id]','$_POST[desc]','$date')");
+    $Rmdnb = ($Bdd->query("SELECT remindnb FROM stats WHERE usersid = '$_SESSION[id]'"))->fetch();
+    $rmdnbf = ($Rmdnb->remindnb + 1);
+    $Bdd->query("UPDATE stats SET remindnb = '$rmdnbf' WHERE usersid = '$_SESSION[id]'");
     $msg = "Votre rappel ('$_POST[desc]') pour le $date a bien été validé.";
 }
 
@@ -104,7 +107,7 @@ if (isset($_POST)) {
         }
     }
 }
-$req = "SELECT * FROM users INNER JOIN reminds ON usersid = users.id WHERE usersid = '$_SESSION[id]' ORDER BY date asc";
+$req = "SELECT * FROM reminds WHERE usersid = '$_SESSION[id]' ORDER BY date asc";
 $ORes = $Bdd->query($req);
 ?>
 

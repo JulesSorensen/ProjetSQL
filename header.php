@@ -18,6 +18,7 @@
                         id="navcol-1">
                         <ul class="nav navbar-nav">
                             <li class="nav-item" role="presentation"><a class="nav-link" href="index.php?p=accueil">Accueil</a></li>
+                            <li class="nav-item" role="presentation"><a class="nav-link" href="index.php?p=classement">Classement</a></li>
                         </ul>
                         <form class="form-inline mr-auto" target="_self">
                             <!-- <div class="form-group"><label for="search-field"><i class="fa fa-search"></i></label><input class="form-control search-field" type="search" name="search" id="search-field"></div> -->
