@@ -4,9 +4,11 @@
     $ORes = $Bdd->query("SELECT * FROM users WHERE email = '$_POST[email]'");
     if ($Usr = $ORes->fetch()) {
       if ($Usr->mdp = $_POST['mdp']) {
+        $date = date('Y-m-d H:i:s');
+        $Bdd->query("UPDATE users SET lastco = '$date' WHERE id = '$Usr->id'");
         $_SESSION["online"] = TRUE;
-        $_SESSION["id"] = $_POST['mdp'];
-        // header("Refresh:0; url=index.php?p=accueil");
+        $_SESSION["id"] = $Usr->id;
+        header("Refresh:0; url=index.php?p=accueil");
       } else {
         $err = "Mauvais mot de passe...";
       }

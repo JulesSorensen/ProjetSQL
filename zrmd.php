@@ -31,8 +31,7 @@
         $total = "$date $time";
         echo "$total <br>";
         // date("Y-m-d H:i:s"); get the current date
-    }
-    if(isset($_POST["2"])) {
+    } else if(isset($_POST["2"])) {
         $sec = 0;
         if(!empty($_POST["jour"])) {
             $sec += (intval($_POST["jour"]) * 86400);
