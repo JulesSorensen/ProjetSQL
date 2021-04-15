@@ -104,8 +104,7 @@ if (isset($_POST)) {
         }
     }
 }
-
-$req = "SELECT * FROM reminds WHERE usersid = '$_SESSION[id]' ORDER BY date asc";
+$req = "SELECT * FROM users INNER JOIN reminds ON usersid = users.id WHERE usersid = '$_SESSION[id]' ORDER BY date asc";
 $ORes = $Bdd->query($req);
 ?>
 
