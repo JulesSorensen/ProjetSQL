@@ -24,7 +24,7 @@
                             <!-- <div class="form-group"><label for="search-field"><i class="fa fa-search"></i></label><input class="form-control search-field" type="search" name="search" id="search-field"></div> -->
                         </form>
                         <?php
-                            if (isset($_POST["online"])) {
+                            if (isset($_SESSION["online"])) {
                                 ?>
                                     <span class="navbar-text"><a href="index.php?p=compte" class="login">Mon compte</a></span><a class="btn btn-light action-button" role="button" href="index.php?p=deconnexion">Se déconnecter</a></div>
                                 <?php

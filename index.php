@@ -5,10 +5,11 @@
     
 
     if (isset($_GET["p"])) { // système de page actuelle stockée dans la donnée de session "p"
-        if (!isset($_POST["online"])) {
+        if (!isset($_SESSION["online"])) {
             switch ($_GET["p"]) {
+                case 'deconnexion':
                 case 'compte':
-                case 'reminds':     $_GET["p"] = "accueil"; echo "*nécéssite d'être connecté pour y accéder*<br>";
+                case 'reminds':     $_GET["p"] = "accueil";
                 default:            break;
             }
         }
@@ -17,6 +18,7 @@
             case 'reminds':         include('reminds.php');         break;
             case 'connexion':       include('connexion.php');       break;
             case 'inscription':     include('inscription.php');     break;
+            case 'deconnexion':     include('deconnexion.php');     break;
             default:                include('accueil.php');         break;
         }
     } else {
