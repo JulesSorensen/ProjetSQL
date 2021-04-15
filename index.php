@@ -8,19 +8,22 @@
         if (!isset($_SESSION["online"])) {
             switch ($_GET["p"]) {
                 case 'deconnexion':
-                case 'compte':
-                case 'reminds':     $_GET["p"] = "accueil";
+                case 'accueil':
+                case 'reminds':
+                case 'compte':      $_GET["p"] = "presentation";
                 default:            break;
             }
         }
         switch ($_GET["p"]) {
             case 'compte':          include('moncompte.php');       break;
+            case 'accueil':         include('accueil.php');         break;
             case 'reminds':         include('reminds.php');         break;
             case 'connexion':       include('connexion.php');       break;
             case 'inscription':     include('inscription.php');     break;
             case 'deconnexion':     include('deconnexion.php');     break;
-            default:                include('accueil.php');         break;
+            case 'presentation':    include('presentation.php');    break;
+            default:                include('presentation.php');    break;
         }
     } else {
-        include('accueil.php');
+        include('presentation.php');
     }
