@@ -26,8 +26,8 @@
      <form action="" method="POST">
        <input type='text' placeholder='Prenom:'  name="prenom"/>
        <input type='text' placeholder='Nom:'  name="nom"/>
-       <input type='text' placeholder='Email:'  name="email"/>
-       <input type='text' placeholder='Mot de Passe:'  name="mdp"/>
+       <input type='email' placeholder='Email:'  name="email"/>
+       <input type='password' placeholder='Mot de Passe:'  name="mdp"/>
        <input type='submit' placeholder='SUBMIT' name="bouton"/>
      </form>
   </div>

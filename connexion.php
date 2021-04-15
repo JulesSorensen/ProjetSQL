@@ -6,7 +6,7 @@
       if ($Usr->mdp = $_POST['mdp']) {
         $_SESSION["online"] = TRUE;
         $_SESSION["id"] = $_POST['mdp'];
-        header("Refresh:0; url=index.php?p=accueil");
+        // header("Refresh:0; url=index.php?p=accueil");
       } else {
         $err = "Mauvais mot de passe...";
       }
@@ -20,7 +20,7 @@
   <div class='signup'>
      <form action="" method="POST">
        <input type='text' placeholder='Email:'  name="email"/>
-       <input type='text' placeholder='Mot de Passe:'  name="mdp"/>
+       <input type='password' placeholder='Mot de Passe:'  name="mdp"/>
        <input type='submit' placeholder='SUBMIT' name="bouton"/>
      </form>
   </div>

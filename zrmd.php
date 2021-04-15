@@ -21,7 +21,7 @@
         if(empty($_POST["time"])) {
             $time = date("H:i:s");
         } else {
-            $time = $_POST["time"];
+            $time = $_POST["time"] . ":00";
         }
         if(empty($_POST["date"])) {
             $date = date("Y-m-d");
@@ -29,7 +29,7 @@
             $date = $_POST["date"];
         }
         $total = "$date $time";
-        echo "<br> $total <br>";
+        echo "$total <br>";
         // date("Y-m-d H:i:s"); get the current date
     }
     if(isset($_POST["2"])) {
