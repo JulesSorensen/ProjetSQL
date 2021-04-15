@@ -29,7 +29,7 @@
                                 <?php
                             } else {
                                 ?>
-                                    <span class="navbar-text"><a href="index.php?p=connexion" class="login">Log In</a></span><a class="btn btn-light action-button" role="button" href="index.php?p=inscription">Sign Up</a></div>
+                                    <span class="navbar-text"><a href="index.php?p=connexion" class="login">Connexion</a></span><a class="btn btn-light action-button" role="button" href="index.php?p=inscription">S'enregistrer</a></div>
                                 <?php
                             }
                         ?>
