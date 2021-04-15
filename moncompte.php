@@ -1,2 +1,12 @@
-DANS CETTE PAGE IL FAUDRAIT JUSTE METTRE LE CODE DE LA GESTION DE COMPTE, PAS BESOIN DE NAVBAR
-IL FAUT DEXU INPUT POUR MODIFIER LE NOM, PRENOM, EMAIL, MDP (3), ET UN FILE AVEC EN PLUS UNE IMG
+<?php
+    // $Bdd->query("SELECT * FROM users")
+?>
+
+<form action="" method="POST">
+    <input type="text" name="">
+    <input type="text" name="">
+    <input type="email" name="">
+    <input type="text" name="">
+    <input type="text" name="">
+    <input type="text" name="">
+</form>
