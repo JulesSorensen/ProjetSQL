@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 13, 2021 at 07:00 PM
+-- Generation Time: Apr 15, 2021 at 11:37 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -34,6 +34,33 @@ CREATE TABLE `reminds` (
   `date` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `reminds`
+--
+
+INSERT INTO `reminds` (`id`, `usersid`, `description`, `date`) VALUES
+(47, 5, 'test', '2021-04-15 23:27:28');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `stats`
+--
+
+CREATE TABLE `stats` (
+  `usersid` int(11) NOT NULL,
+  `remindnb` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `stats`
+--
+
+INSERT INTO `stats` (`usersid`, `remindnb`) VALUES
+(2, 5),
+(1, 0),
+(5, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -51,6 +78,15 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `email`, `nom`, `prenom`, `mdp`, `image`, `lastco`) VALUES
+(1, 'jladeiro@efficom-lille.com', 'LADEIRO', 'Jules', 'azertyuiop', '', '2021-04-10 16:04:00'),
+(2, 'julesladnef@gmail.com', 'Ladeiro', 'Jules', 'azertyuiop', '/WilfreB1.png', '2021-04-15 20:10:09'),
+(5, 'lcornelis@efficom-lille.com', 'Cornelis', 'Lucas', 'azertyuiop', '/lucas1.png', '2021-04-15 23:26:02');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -59,6 +95,12 @@ CREATE TABLE `users` (
 --
 ALTER TABLE `reminds`
   ADD PRIMARY KEY (`id`),
+  ADD KEY `usersid` (`usersid`);
+
+--
+-- Indexes for table `stats`
+--
+ALTER TABLE `stats`
   ADD KEY `usersid` (`usersid`);
 
 --
@@ -75,13 +117,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `reminds`
 --
 ALTER TABLE `reminds`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
@@ -92,6 +134,12 @@ ALTER TABLE `users`
 --
 ALTER TABLE `reminds`
   ADD CONSTRAINT `reminds_ibfk_1` FOREIGN KEY (`usersid`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `stats`
+--
+ALTER TABLE `stats`
+  ADD CONSTRAINT `stats_ibfk_1` FOREIGN KEY (`usersid`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
