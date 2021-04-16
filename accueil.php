@@ -1,5 +1,4 @@
 <link rel="stylesheet" href="css/accueil.css">
-
 <?php
 
 ?>
@@ -102,7 +101,7 @@ if (isset($_POST)) {
     foreach ($_POST as $key => $value) {
         if(str_starts_with($key, 'sup-')) {
             $id = explode("-",$key)[1];
-            $req2 = "DELETE FROM reminds WHERE id = '$id'";
+            $req2 = "DELETE FROM reminds WHERE id = '$id' and usersid = '$_SESSION[id]'";
             $ORes2 = $Bdd->query($req2);
         }
     }
