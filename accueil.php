@@ -81,7 +81,7 @@ if(isset($_POST["ajout"])) {
     $Rmdnb = ($Bdd->query("SELECT remindnb FROM stats WHERE usersid = '$_SESSION[id]'"))->fetch();
     $rmdnbf = ($Rmdnb->remindnb + 1);
     $Bdd->query("UPDATE stats SET remindnb = '$rmdnbf' WHERE usersid = '$_SESSION[id]'");
-    $msg = "Votre rappel ('$_POST[desc]') pour le $date a bien été validé.";
+    $msg = "Votre rappel '$_POST[desc]' pour le $date a bien été validé.";
 }
 
 if (isset($msg)) {
@@ -106,7 +106,7 @@ if (isset($_POST)) {
         }
     }
 }
-$req = "SELECT * FROM reminds WHERE usersid = '$_SESSION[id]' ORDER BY date asc";
+$req = "SELECT *, TIMEDIFF(date,NOW()) as calculdatediff FROM reminds WHERE usersid = '$_SESSION[id]' ORDER BY date asc";
 $ORes = $Bdd->query($req);
 ?>
 
@@ -130,8 +130,7 @@ while ($reminds = $ORes->fetch()){?>
                                             <div class="widget-content-left">
                                                 <div class="widget-heading"><?php if(!empty($reminds->description)){ echo($reminds->description);} ?>
                                                 <?php
-                                                    $date1 = strtotime(date("Y-m-d H:i:s")); $date2 = strtotime($reminds->date);
-                                                    if (($date2 - $date1) <= 0) {
+                                                    if (($reminds->calculdatediff) <= 0) {
                                                         ?> <div class="badge badge-info ml-2">NOW</div> <?php
                                                     }
                                                 ?>
